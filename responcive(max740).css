@@ -1,0 +1,905 @@
+@media screen and (max-width:740px) {
+    /* 740px以下の画面サイズで適用されるスタイル */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body{
+        font-family: "Noto Sans JP", sans-serif, "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;  
+      }
+      
+      
+      .main{
+        width: 1470px;
+      }
+      
+      
+      a{
+        text-decoration: none;
+        opacity: 1;
+        transition: 0.3s;
+      }
+      
+      a:hover{
+        opacity: 0.7;
+        transition: 0.3s;
+      }
+      
+      li{
+        list-style: none;
+      }
+      
+      
+      /* ここから下がハンバーガーメニューに関するCSS */
+      /* チェックボックスを非表示にする */
+      .drawer_hidden {
+        display: none;
+      }
+      
+      /* ハンバーガーアイコンの設置スペース */
+      .drawer_open {
+        display: flex;
+        height: 104px;
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 100;/* 重なり順を一番上にする */
+        cursor: pointer;
+        background-color: brown;
+      }
+      
+      
+      /* ハンバーガーメニューのアイコン */
+      .drawer_open span,
+      .drawer_open span:before,
+      .drawer_open span:after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 35px;
+        border-radius: 3px;
+        background: #333;
+        transition: 0.5s;
+        position: absolute;
+        background-color:#fff ;
+      }
+      
+      
+      /* 三本線の一番上の棒の位置調整 */
+      .drawer_open span:before {
+        bottom: 8px;
+      }
+      
+      /* 三本線の一番下の棒の位置調整 */
+      .drawer_open span:after {
+        top: 8px;
+      }
+      
+      /* アイコンがクリックされたら真ん中の線を透明にする */
+      #drawer_input:checked ~ .drawer_open span {
+        background: rgba(255, 255, 255, 0);
+      }
+      
+      /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+      #drawer_input:checked ~ .drawer_open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+      }
+      
+      #drawer_input:checked ~ .drawer_open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+        
+      /* メニューのデザイン*/
+      .nav_content {
+        width: 77%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%; /* メニューを画面の外に飛ばす */
+        z-index: 99;
+        background: #fff;
+        transition: .5s;
+      }
+      
+      
+      /* アイコンがクリックされたらメニューを表示 */
+      #drawer_input:checked ~ .nav_content {
+        right: 0;/* メニューを画面に入れる */
+        transition: .5s;
+      }
+      
+      
+      
+      .top{
+        height: 950px;
+        position: relative;
+        overflow: hidden;
+        width:100%;
+      }
+      
+      .top video{
+        position: absolute;
+        height:950px;
+        width: auto;
+        z-index: -1;
+      }
+      
+      .top h2{
+        text-indent: 3px;
+        font-size: 60px;
+        line-height: 2;
+        color: #fff;
+        font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+        text-shadow: 3px 3px 4px #000000;
+        position: absolute;
+        top: 550px;
+        left: 70px;
+      
+      }
+      
+      .left{
+        background-color: brown;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+      }
+      
+      .right{
+        background-color: gray;
+        width: 75%;
+        display: flex;
+        align-items: center;
+      }
+      
+      .black{
+        padding-left: 20px;
+        font-size: 25px;
+      }
+
+      .black span{
+        font-size: 20px;
+      }
+      
+      .top-header-link{
+        display: flex;
+        width: 100%;
+        height: 170px;
+      
+      }
+      
+      .top-header-link a{
+        color: white;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:rgb(255, 255, 255,0.8);
+        width: 100%;
+        position: fixed;
+        top:0;
+        z-index: 99;
+      }
+      
+      .logo {
+        padding-left: 30px;
+      }
+      
+      .logo img{
+        background-color: #333;
+        width: 200px;
+        height: 80px;
+      }
+      
+      .logo p{
+      display: none;
+      }
+      
+      
+      .header-right{
+        position: absolute;
+        top: 0;
+        left: 68%;
+        }
+      
+        .header-right a{
+          color: #ffffff89;
+        }
+      
+      .line img{
+        background-color: green;
+        width: 100px;
+        height: 100px;
+        margin: 5px 2px;
+      }
+      
+      .entry img{
+        background-color: red;
+        width: 250px;
+        height: 100px;
+        margin: 2px;
+      }
+
+      .menu-box ul{
+        width: 100%;
+        display: flex;
+        background-color: #fff;
+        width: 100%;
+        padding: 30px 20px;
+      }
+      
+      .menu-box a{
+        color: #333;
+        background: url(./温泉宿の暖簾アイコン.jpeg);
+        background-repeat: no-repeat;
+        background-position:0% 50%;
+        background-size: 20px 20px;
+        display: block;
+        color: #333;
+        font-size: 25px;
+        padding: 0px 40px;
+        letter-spacing: 1.5px;
+      }
+      
+      .menu-box li{
+        width: 100%;
+      }
+      
+      .nav_content{
+        background-color: brown;
+      }
+      
+      .menu{
+        padding: 180px 10px 30px 10px;
+        height: 100% ;
+        overflow-y: scroll;
+        width: 92%;
+        margin: 0 auto;
+      }
+     
+      
+      .menu-title  {
+        color: #fff;
+        padding:35px 0 30px 0;
+        display: block;
+        font-size: 30px;
+      }
+      
+      .menu-title span {
+        margin-right: 15px;
+        font-weight:bold;
+      }
+      
+      
+      
+      .toppage{
+        position: relative; 
+        height: 1420px;  
+      }
+      
+      .toppage::before{
+        display: none;
+      }
+      
+      .toppage::after{
+        content: "";
+        position: absolute;
+        background-color:brown;
+        width: 200px;
+        height: 200px;
+        left: 145px;
+        top: 900px;
+      }
+      
+      
+      .toppage-text{
+        writing-mode:horizontal-tb;
+        align-items: center; 
+        background: radial-gradient(ellipse at center, rgb(250, 184, 184) 0%,rgb(251, 210, 210) 28%,rgb(248, 212, 212) 18%,rgb(255, 255, 255) 70%);
+        font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+        
+      }
+      
+      .toppage-text-right,.toppage-text-middle,.toppage-text-left{
+        padding: 30px 0px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      .toppage-text p{
+      font-size: 26px;
+      letter-spacing: 2px;
+      line-height: 2;
+      font-weight:bold;
+      }
+      
+      .toppage-contents{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding:0 50px;
+      margin: 50px 100px 0 100px ;
+      }
+      
+      .toppage-img-left{
+        position: absolute;
+        left: 45px;
+        top: 1150px;
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+      }
+      
+      .toppage-img-right{
+        position: absolute;
+        right: 30px;
+        top: 940px;
+        width: 230px;
+        height: 350px;
+        background-color: brown;
+      }
+      
+      .section-title h1{
+        font-size: 60px;
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 20px;
+        font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+        font-weight: bold;
+        display: inline;
+      }
+      
+      .section-title h1::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background: linear-gradient(to bottom, brown 50%,#333 50%);
+        width: 25px;
+        height: 30px;
+        transform: translateY(-50%);
+        
+      
+      }
+      
+      
+      
+      .recruit{
+        margin-top: 120px;
+      }
+      
+      .recruit-contents{
+        position: relative;
+        width: 100%;
+      }
+      
+      .recruit-contents h1{
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+    
+      
+      .recruit-link{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 60px 0;
+        background-color: #eec8c8;
+      }
+      
+      .recruit-item{
+        
+        background-color: #fff; 
+        margin: 25px 0px;
+        width: 85%;
+        height: 130px;
+        
+       
+      }
+      
+      .recruit-item a{
+        color: #333;
+        font-size: 35px;
+        letter-spacing: 2px;
+        display: block;
+        width: 100%;
+        height: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      
+      .recruit-item a::before,
+      .recruit-item a::after {
+          content: '';
+          position: absolute;
+          
+      }
+      
+      .recruit-item a::before {
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 30px 30px 0 0;
+          border-color: brown transparent transparent transparent;
+      }
+      
+      .recruit-item a::after {
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 30px 30px;
+        border-color: transparent transparent brown  transparent;
+      }
+      
+      .manage{
+        position: relative;
+        background: linear-gradient(to top, rgba(233, 233, 233, 0.349) 90%, transparent 10%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        z-index: -2;
+        margin-bottom: 180px;
+      }
+      
+      .manage::before{
+        content: "";
+        position: absolute;
+        top: 1170px;
+        left: 1170px;
+        background-color: #f9eadf5d;
+        width: 200px;
+        height: 150px;
+      
+      }
+      
+      .manage::after{
+        content: "";
+        position: absolute;
+        top: 1350px;
+        left: 1100px;
+        background-color: #f9eadf5d;
+        width: 70px;
+        height: 70px;
+      
+      }
+      
+      
+      .manage-contents{
+        display: flex;
+        padding:  30px 100px;
+        position: relative;
+        height: 1050px;
+      }
+
+      .manage-contents::after{
+        content: "";
+        background-color: brown;
+        height: 430px;
+        width: 700px;
+        position: absolute;
+        top:720px;
+        left: 50px;
+        z-index: -1;
+      }
+      
+      .manage-text{
+        margin-left:40px;
+        padding-top: 20px;
+      }
+
+      .manage-text .section-btn{
+        padding-left: 510px;
+      }
+      
+      
+      
+      .manage-discript p{
+        font-size: 30px;
+      line-height: 2.3em;
+      }
+
+      .manage-discript{
+        margin-bottom: 400px;
+      }
+
+      
+      
+      .manage-img{
+        display: none;
+      }
+      
+      .section-btn a{
+        color: #333;
+        box-shadow: 10px 10px 15px 0 #b3b2b2;
+        font-size: 30px;
+        width: 720px;
+        height: 100px;
+        margin: 0;
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(./温泉宿の暖簾アイコン.jpeg);
+        background-repeat: no-repeat;
+        background-position:95% 50%;
+        background-size: 30px 30px;
+        background-color: #fff;
+      }
+      
+      .product{
+        margin-top: 30px;
+      }
+      
+      .product-contents{
+        display:flex ;
+        flex-wrap: none;
+        width: 100%;
+        position: relative;
+      }
+      
+      .product-left{
+        width: 100%;
+        position: relative;
+      }
+      
+      .product-left::before{
+        content: "";
+        position: absolute;
+        background-color:rgba(255, 210, 138, 0.262);
+        width: 150px;
+        height: 90px;
+        top:2550px;
+        left:230px;
+        z-index: -1;
+      }
+       
+      
+      .product-left::after{
+        content: "";
+        position: absolute;
+        background-color:rgba(255, 210, 138, 0.262);
+        width: 150px;
+        height: 120px;
+        top:2650px;
+        left:30px;
+        z-index: -1;
+      }
+      
+      
+      
+      .product-right::before{
+        content: "";
+        position: absolute;
+        background-color:rgba(212, 212, 212, 0.262);
+        width: 1050px;
+        height: 700px;
+        top:65px;
+        left:-340px;
+        z-index: -1;
+      }
+       
+      .product-imgleft div{
+        height: 250px;
+        width: 300px;
+        background-color: brown;
+        position: absolute;
+      }
+
+      .product-right{
+        width: 91%;
+        margin: 0 ;
+        position: absolute;
+        top: 130px;
+        left: 70px;
+      }
+      
+      .product-text{
+        padding:30px 0 0 0;
+        height: 250px;
+        margin-bottom: 170px;
+        
+      }
+
+      .product-text .section-title{
+        text-align: right;
+        margin-bottom: 30px;
+      }
+
+      
+      
+      .product-text p{
+        letter-spacing:0.8px;
+        line-height: 2.3em;
+        font-size: 30px;
+      }
+      
+      
+      
+      .product-imgright div{
+        background-color: brown;
+        width: 100%;
+        height: 1060px;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .product-box{
+        padding:1650px 70px 70px 70px ;
+      }
+      
+      .product-item{
+        margin-bottom: 30px;
+      }
+      
+      .product-box h2{
+        font-size: 35px;
+        color:#333;
+        font-weight: bold;
+
+      }
+      
+      .product-box p{
+        letter-spacing: 1.5px;
+        line-height: 2.3em;
+        font-size: 30px;
+        margin: 40px 0 40px 0;
+      }
+
+      .product-box .section-btn{
+        margin-bottom: 80px;
+      }
+      
+      .employee-contents{
+        padding: 0 70px;
+        position: relative;
+        width: 100%;
+        margin-bottom: 230px;
+      }
+      
+      .employee-contents::before{
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        background-color: #d1d1d16f;
+        width: 1470px;
+        height: 1750px;
+        z-index: -1;
+      
+      }
+      
+      .employee-btn {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      .employee-text{
+        margin-bottom: 40px;
+      }
+      
+      .employee-text p{
+      line-height: 2.3em;
+      letter-spacing: 1.5px;
+      font-size: 30px;
+      }
+      
+      .employee-link{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px 5%;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      
+      .employee-item{
+      width: 45%;
+      height: 870px;
+      background-color: #fff;
+      }
+      
+
+      .employee-item img{
+        background-color: brown;
+        width: 100%;
+        height: 760px;
+      }
+      
+      .employee-item a{
+        color: #333;
+        display: block;
+      }
+      
+      .link-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      
+      .link-text p{
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        letter-spacing: 1px;
+        font-size: 20px;
+      } 
+      .employee-item span{
+        margin-left:20px ;
+      }
+      
+      .item-sub{
+        font-size: 13px;
+      }
+      
+      .topic{
+        display:block;
+        width: 100%;
+        padding: 0 50px;
+        margin-top: 130px;
+      }
+      
+      .topic-left{
+        width: 100%;
+        margin-right: 0px;
+      }
+      
+      .topic-right{
+        width: 100%;
+        margin-left: 0px; 
+      }
+      
+      
+      
+      .topic-contents{
+        background: linear-gradient(to top, rgba(255, 230, 177, 0.611) 97%, transparent 3%);
+        background-size: 100% 100%;
+        position: relative;
+        background-repeat: no-repeat;
+        padding: 0 30px 0px 30px;
+        margin-bottom: 100px;
+      }
+      
+      .topic-contents .section-title{
+      width: 100%;
+      margin: 0 auto;
+      }
+      
+      
+      .topic-text p{
+        letter-spacing: 1.5px;
+        line-height: 2.3em;
+        font-size: 30px;
+        padding:0 50px 0px 50px;
+        margin:20px 0;
+      }
+      
+      .topic-img{
+        background-color: brown;
+        width: 1200px;
+        height: 600px;
+        margin-left: 50px;
+      }
+      
+      .topic a{
+      width: 720px;
+      height: 100px;
+      margin: -30px auto 0 auto;
+      box-shadow: 0px 10px 5px 0 #b3b2b2;
+      }
+
+
+      .works{
+        background-color: #333;
+        padding:0 0px;
+        width: 1470px;
+        height:500px ;
+      }
+      
+      .works-item{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        }
+      
+      .works-item a{
+        color: #fff;
+      }
+      
+      .works ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; 
+        list-style: none;
+        width: 100%;
+        padding: 50px 70px ;
+        margin: 0;
+        
+      }
+      
+      .works li{
+        font-size: 25px;
+        margin: 20px 0px;
+        width: 50%;
+      }
+      
+      .li-img img{
+        background-color: #fff;
+        width: 220px;
+        height: 100px;
+      }
+      
+      .bottom-link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      
+      .bottom-link a{
+        color: #333;
+        background: url(./温泉宿の暖簾アイコン.jpeg);
+        padding-left: 30px;
+        background-repeat: no-repeat;
+        background-position:0% 30%;
+        background-size: 30px 30px;
+        background-color: #fff;
+        display: block;
+        margin: 30px 40px;
+        height: 60px;
+        font-size: 25px;
+        padding-top: 5px;
+      }
+      
+      .bottom-img img{
+        background-color: #333;
+        width: 220px;
+        height: 100px;
+      
+      }
+      
+      .bottom-img a{
+        color: #333;
+      }
+      
+      .bottom-img{
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .bottom{
+        text-align: center;
+        width: 1470px;
+        padding-bottom: 50px;
+      }
+      
+      small{
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+    }
